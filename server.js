@@ -19,25 +19,25 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var mysql = require("mysql");
+// var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host: "127.0.0.1",
-  port: 8889,
-  user: "root",
-  password: "root",
-  database: "burgers_db"
-});
+// var connection = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: 3306,
+//   user: "root",
+//   password: "root",
+//   database: "burgers_db"
+// });
 
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
+// connection.connect(function(err) {
+//   if (err) {
+//     console.error("error connecting: " + err.stack);
+//     return;
+//   }
 
-  console.log("connected as id " + connection.threadId);
+//   console.log("connected as id " + connection.threadId);
 
-});
+// });
 
 app.get("/", function(req, res) {
   connection.query("SELECT * FROM burgers;", function(err, data) {
