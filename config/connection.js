@@ -3,7 +3,7 @@ var connection;
 
 // add JAWSDB for heroku
 if (process.env.JAWSDB_URL) {
-	connection = mysql.createConnection(process.env.JAWSDB_URL);
+	connection = mysql.createConnection(process.env.JAWSDB_URL, "root", "root");
 } else {
   connection = mysql.createConnection({
     host: "127.0.0.1",
