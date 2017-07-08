@@ -10,7 +10,7 @@
         <!-- Dynamically Insert Ready Burgers Here -->
         {{#each burgers}}
           {{#unless this.devoured}}
-          <form action="/create/{{this.id}}?_method=PUT" method="POST">
+          <form action="/devour/{{this.id}}?_method=PUT" method="POST">
             <div class="input-group">
               <li class="form-control">{{id}}. {{this.burger_name}}</li>
                 <span class="input-group-btn">

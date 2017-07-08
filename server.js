@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Override with POST having ?_method=DELETE
-// app.use(methodOverride("_method"));
+app.use(methodOverride("_method"));
 
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -58,7 +58,7 @@ app.post("/create", function(req, res) {
   })
 })
 
-app.put("/create/:id", function(req, res) {
+app.put("/devour/:id", function(req, res) {
 
   connection.query("UPDATE burgers SET devoured = true WHERE id = ?;", [
     req.body.id
